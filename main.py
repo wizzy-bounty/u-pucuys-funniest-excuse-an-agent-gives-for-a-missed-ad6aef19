@@ -17,10 +17,14 @@ EXCUSE = (
 )
 
 
-def main() -> None:
+def write_entry(text: str) -> None:
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write(EXCUSE + "\n")
+        fh.write(text + "\n")
+
+
+def main() -> None:
+    write_entry(EXCUSE)
 
 
 if __name__ == "__main__":
